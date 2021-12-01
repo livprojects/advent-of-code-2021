@@ -1,15 +1,16 @@
-const rawInputs = "";
-const inputs = ["1", "2", "3"];
+// FIND HOW MANY MEASUREMENTS ARE GREATER THAN THE ONE BEFORE
+const fs = require('fs');
+const inputs = fs.readFileSync('inputdayone.txt').toString().split("\r\n");
+
+console.log(inputs);
 
 let biggerCounter = 0;
 
 inputs.forEach((element, index, array) => {
 
-    if (element > array[index -1]) {
+    if (parseInt(element, 10) > array[index -1]) {
         biggerCounter++;
     }
 
-    console.log("INCREMENT " + biggerCounter);
 });
-
 console.log("TOTAL " + biggerCounter);
