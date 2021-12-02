@@ -3,12 +3,10 @@
 const fs = require('fs');
 const inputs = fs.readFileSync('inputdaytwo.txt').toString().split("\r\n");
 
-console.log(inputs);
-
 let depth = 0;
 let horizontalPosition = 0;
 let aim = 0;
-// On a un tableau de chaînes de caractères
+
 inputs.forEach((input) => {
     const splittedStringsArray = input.split(" ");
   
@@ -21,7 +19,6 @@ inputs.forEach((input) => {
             break;
         case 'forward':
             horizontalPosition += parseInt(splittedStringsArray[1], 10);
-
             depth += (aim*parseInt(splittedStringsArray[1], 10));
             break;
         default: 
